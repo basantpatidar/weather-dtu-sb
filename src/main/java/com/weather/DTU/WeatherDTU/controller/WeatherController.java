@@ -9,7 +9,6 @@ public class WeatherController {
 
 		@PostMapping("/getReading")
 		public boolean getReading() {
-//			System.out.println("Running");
 			return true;
 		}
 }
