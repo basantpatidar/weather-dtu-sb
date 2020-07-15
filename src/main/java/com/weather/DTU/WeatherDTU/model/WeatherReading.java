@@ -13,7 +13,6 @@ public class WeatherReading {
 	private double pressure;
 	private double temperature;
 //	@OneToOne(cascade = CascadeType.ALL)
-	private Wind wind;
 	private Timestamp timestamp;
 	
 	public WeatherReading(){
@@ -31,7 +30,6 @@ public class WeatherReading {
 		this.humidity = humidity;
 		this.pressure = pressure;
 		this.temperature = temperature;
-		this.wind = wind;
 		this.timestamp = timestamp;
 	}
 	
@@ -65,12 +63,7 @@ public class WeatherReading {
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
-	public Wind getWind() {
-		return wind;
-	}
-	public void setWind(Wind wind) {
-		this.wind = wind;
-	}
+	
 	public Timestamp getTimestamp() {
 		return timestamp;
 	}
@@ -81,7 +74,7 @@ public class WeatherReading {
 	@Override
 	public String toString() {
 		return "WeatherReading [id=" + id + ", city=" + city + ", description=" + description + ", humidity=" + humidity
-				+ ", pressure=" + pressure + ", temperature=" + temperature + ", wind=" + wind + ", timestamp="
+				+ ", pressure=" + pressure + ", temperature=" + temperature + ", timestamp="
 				+ timestamp + "]";
 	}
 
