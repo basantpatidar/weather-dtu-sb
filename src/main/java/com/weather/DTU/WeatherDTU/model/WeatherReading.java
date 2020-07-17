@@ -5,19 +5,16 @@ import java.sql.Timestamp;
 
 public class WeatherReading {
 	
-//	@Id
 	private String id;
 	private String city;
 	private String description;
 	private Double humidity;
 	private double pressure;
 	private double temperature;
-//	@OneToOne(cascade = CascadeType.ALL)
 	private Wind wind;
 	private Timestamp timestamp;
 	
 	public WeatherReading(){
-//		this.id = UUID.randomUUID().toString();
 	}
 	
 	
@@ -25,7 +22,6 @@ public class WeatherReading {
 			double temperature, Wind wind, Timestamp timestamp) {
 		super();
 		
-//		this.id = UUID.randomUUID().toString();
 		this.city = city;
 		this.description = description;
 		this.humidity = humidity;
