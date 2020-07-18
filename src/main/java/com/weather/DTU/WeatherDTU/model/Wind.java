@@ -1,5 +1,7 @@
 package com.weather.DTU.WeatherDTU.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
@@ -8,7 +10,7 @@ package com.weather.DTU.WeatherDTU.model;
 
 //@Entity
 public class Wind {
-//	@Id @GeneratedValue
+	@Id @GeneratedValue
 	private String id;
 
 	private double speed;
