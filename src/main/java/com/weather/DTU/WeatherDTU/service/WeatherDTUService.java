@@ -9,8 +9,8 @@ public class WeatherDTUService {
 	
 	WeatherDTURepository weatherDTURepository;
 
-	public List<WeatherReading> getAllReadings(){
-		//method
+	public List<WeatherReading> getAllReadings(WeatherReading weatherReading){
+	
 		return null;
 		
 	}
