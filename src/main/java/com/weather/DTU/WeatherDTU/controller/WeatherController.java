@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeatherController {
 
 		@PostMapping("/getReading")
-		public boolean getReading() {
-			return true;
+		public String getReading() {
+			return null;
 		}
 }
