@@ -16,9 +16,6 @@ public class WeatherReading {
 	private Wind wind;
 	private Timestamp timestamp;
 	
-	public WeatherReading(){
-	}
-	
 	
 	public WeatherReading(String city, String description, Double humidity, double pressure,
 			double temperature, Wind wind, Timestamp timestamp) {
