@@ -12,12 +12,7 @@ public class Wind {
 	
 	private double degree;
 	
-	public Wind() {
-		
-		
-	}
 	
-
 	public Wind(double speed, double degree) {
 		super();
 		this.speed = speed;
