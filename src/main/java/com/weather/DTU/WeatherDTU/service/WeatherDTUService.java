@@ -12,7 +12,7 @@ public class WeatherDTUService {
 
 	public List<WeatherReading> getAllReadings(WeatherReading weatherReading){
 		List<WeatherReading> list = new ArrayList<>();
-		return null;
+		return list;
 		
 	}
 }
