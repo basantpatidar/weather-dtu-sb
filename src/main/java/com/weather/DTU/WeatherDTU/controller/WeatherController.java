@@ -19,11 +19,6 @@ public class WeatherController {
 	private WeatherDTUService weatherDTUService;
 	
 //private WeatherService weatherService;
-//	
-//	@Autowired
-//	public WeatherInfoController(WeatherService weatherService) {
-//		this.weatherService = weatherService;
-//	}
 	
 	
 		@PostMapping("/getReading")
