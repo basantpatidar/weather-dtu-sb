@@ -18,7 +18,6 @@ public class WeatherController {
 	@Autowired
 	private WeatherDTUService weatherDTUService;
 	
-	private WeatherService weatherService;
 	
 	
 		@PostMapping("/getReading")
