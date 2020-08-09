@@ -11,7 +11,7 @@ public class WeatherDTUService {
 	
 	WeatherDTURepository weatherDTURepository;
 
-	public List<WeatherReading> getAllReadings(WeatherReading weatherReading){
+	public List<WeatherReading> getAllReadings(List<WeatherReading> weatherReading){
 		List<WeatherReading> list = new ArrayList<>();
 		
 //		list.sort(Comparator.comparing(WeatherReading::getTimestamp));
