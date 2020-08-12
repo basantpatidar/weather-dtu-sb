@@ -22,4 +22,9 @@ public class WeatherController {
 			weatherReading = weatherDTUService.getAllReadings(weatherReading);
 			return weatherReading;
 		}
+		
+		@GetMapping("/test")
+		public boolean testingRest() {
+			return true;
+		}
 }
