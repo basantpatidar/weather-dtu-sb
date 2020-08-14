@@ -2,9 +2,10 @@ package com.weather.DTU.WeatherDTU.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
+@Entity
 public class WeatherReading {
 	@Id
 	private String id;
