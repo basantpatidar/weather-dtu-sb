@@ -2,8 +2,10 @@ package com.weather.DTU.WeatherDTU.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class WeatherReading {
@@ -14,6 +16,7 @@ public class WeatherReading {
 	private Double humidity;
 	private double pressure;
 	private double temperature;
+	@OneToOne(cascade = CascadeType.ALL)
 	private Wind wind;
 	private Timestamp timestamp;
 	
