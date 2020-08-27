@@ -25,6 +25,7 @@ public class WeatherController {
 		
 		@GetMapping("/test")
 		public boolean testingRest() {
+			//check working
 			return true;
 		}
 }
