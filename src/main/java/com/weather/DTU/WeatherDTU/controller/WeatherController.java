@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
@@ -12,7 +11,7 @@ import com.weather.DTU.WeatherDTU.service.WeatherDTUService;
 
 
 @RestController
-@RequestMapping("/weather")
+//@RequestMapping("/weather")
 public class WeatherController {
 	
 	
@@ -24,6 +23,7 @@ public class WeatherController {
 		public List<WeatherReading> getReading() {
 			List<WeatherReading> weatherReading = null;
 			weatherReading = weatherDTUService.getAllReadings(weatherReading);
+			System.out.println(weatherReading.toString());
 			return weatherReading;
 		}
 		
