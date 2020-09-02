@@ -20,7 +20,7 @@ public class WeatherController {
 	private WeatherDTUService weatherDTUService;
 		
 		@GetMapping("/getReading")
-		public List<WeatherReading> getReading() {
+		public WeatherReading getReading() {
 			WeatherReading weatherReading = null;
 			weatherReading = weatherDTUService.getAllReadings(weatherReading);
 			System.out.println(weatherReading.toString());
