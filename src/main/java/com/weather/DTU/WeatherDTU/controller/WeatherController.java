@@ -11,7 +11,6 @@ import com.weather.DTU.WeatherDTU.service.WeatherDTUService;
 
 
 @RestController
-//@RequestMapping("/weather")
 public class WeatherController {
 	
 	
