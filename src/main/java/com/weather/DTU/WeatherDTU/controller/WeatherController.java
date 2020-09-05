@@ -9,12 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
 import com.weather.DTU.WeatherDTU.service.WeatherDTUService;
 
-
+//controller
 @RestController
 public class WeatherController {
-	
-	
-	
 	@Autowired
 	private WeatherDTUService weatherDTUService;
 		
