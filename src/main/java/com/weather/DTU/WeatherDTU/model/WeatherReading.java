@@ -19,12 +19,11 @@ public class WeatherReading {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Wind wind;
 	private Timestamp timestamp;
-	
-	
+		
+	//default
 	public WeatherReading(String city, String description, Double humidity, double pressure,
 			double temperature, Wind wind, Timestamp timestamp) {
 		super();
-		
 		this.city = city;
 		this.description = description;
 		this.humidity = humidity;
