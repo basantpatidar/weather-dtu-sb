@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.weather.DTU.WeatherDTU.model.Wind;
 
-//wind repository 
 @Repository
 public interface WindDTURepository extends CrudRepository<Wind, String>{
 
