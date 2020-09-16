@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
 import com.weather.DTU.WeatherDTU.repository.WeatherDTURepository;
+import com.weather.DTU.WeatherDTU.model.WeatherReading;
 
 @Service
 public class WeatherDTUService {
@@ -15,7 +16,7 @@ public class WeatherDTUService {
 	WeatherDTURepository weatherDTURepository;
 
 	public WeatherReading getAllReadings(WeatherReading weatherReading){
-		WeatherReading list = new Weather;
+		WeatherReading list = new WeatherReading();
 		
 		list.sort(Comparator.comparing(WeatherReading::getTimestamp));
 		return list;
