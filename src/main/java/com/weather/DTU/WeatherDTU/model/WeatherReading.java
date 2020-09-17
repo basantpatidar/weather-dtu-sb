@@ -32,6 +32,10 @@ public class WeatherReading {
 		this.timestamp = timestamp;
 	}
 	
+	public WeatherReading() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCity() {
 		return city;
 	}
