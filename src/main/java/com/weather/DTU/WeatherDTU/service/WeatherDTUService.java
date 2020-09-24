@@ -12,8 +12,9 @@ public class WeatherDTUService {
 
 	public WeatherReading getAllReadings(WeatherReading weatherReading){
 		WeatherReading list = new WeatherReading();
+//		list.getCity();
 		
-		System.out.println(weatherDTURepository.findAll());
+//		System.out.println(weatherDTURepository.findAll());
 //		list.sort(Comparator.comparing(WeatherReading::getTimestamp));
 		return list;
 		
