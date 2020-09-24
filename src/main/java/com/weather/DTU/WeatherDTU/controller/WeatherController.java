@@ -16,7 +16,7 @@ public class WeatherController {
 		public WeatherReading getReading() {
 			WeatherReading weatherReading = null;
 			weatherReading = weatherDTUService.getAllReadings(weatherReading);
-//			System.out.println(weatherReading.toString());
+			System.out.println(weatherReading.toString());
 			return weatherReading;
 		}
 		
