@@ -1,5 +1,8 @@
 package com.weather.DTU.WeatherDTU.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,11 +16,11 @@ public class WeatherController {
 	private WeatherDTUService weatherDTUService;
 		
 		@GetMapping("/getReading")
-		public WeatherReading getReading() {
-			WeatherReading weatherReading = null;
-			weatherReading = weatherDTUService.getAllReadings(weatherReading);
+		public List<WeatherReading> getReading() {
+			List<WeatherReading> weatherReading = new ArrayList<WeatherReading>();
+			weatherReading = weatherDTUService.getAllReadings();
 			System.out.println(weatherReading.toString());
-			return weatherReading;
+			return  weatherReading;
 		}
 		
 		@GetMapping("/test")
