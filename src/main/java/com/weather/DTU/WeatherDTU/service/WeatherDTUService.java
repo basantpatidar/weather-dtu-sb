@@ -16,7 +16,8 @@ public class WeatherDTUService {
 
 	public List<WeatherReading> getAllReadings(){
 		 List<WeatherReading> list = new ArrayList<>(); 
-		 weatherDTURepository.findAll().forEach(list1->list.add(list1));
+//		 weatherDTURepository.findAll().forEach(list1->list.add(list1));
+		 list = (List<WeatherReading>) weatherDTURepository.findAll();
 			
 //		List<WeatherReading> wl 
 		//return (List<WeatherReading>) weatherDTURepository.findAll();
