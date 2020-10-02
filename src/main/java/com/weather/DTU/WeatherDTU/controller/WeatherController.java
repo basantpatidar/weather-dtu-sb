@@ -23,6 +23,13 @@ public class WeatherController {
 			return  weatherReading;
 		}
 		
+		@GetMapping("/getBadWeather")
+		public List<WeatherReading> getBadWeather(){
+			List<WeatherReading> weatherReading = new ArrayList<WeatherReading>();
+			weatherReading = weatherDTUService.getBadWeather();
+			return weatherReading;
+		}
+		
 		@GetMapping("/test")
 		public boolean testingRest() {
 			return true;
