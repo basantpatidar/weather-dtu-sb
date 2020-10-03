@@ -29,4 +29,9 @@ public class WeatherDTUService {
      return list;
 		
 	}
+
+	public List<WeatherReading> getBadWeather() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
