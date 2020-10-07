@@ -19,21 +19,14 @@ public class WeatherDTUService {
 //		 weatherDTURepository.findAll().forEach(list1->list.add(list1));
 		 list = (List<WeatherReading>) weatherDTURepository.findAll();
 		 
-			
-//		List<WeatherReading> wl 
-		//return (List<WeatherReading>) weatherDTURepository.findAll();
 		
-		
-		
-//		System.out.println(weatherDTURepository.findAll());
-//		list.sort(Comparator.comparing(WeatherReading::getTimestamp));
      return list;
 		
 	}
 
 	public List<WeatherReading> getBadWeather() {
 		List<WeatherReading> list = new ArrayList<>(); 
-		private WeatherReading weatherReading;
+		
 		if(weatherReading.getTemperature() > 80) {
 			 
 		 }
