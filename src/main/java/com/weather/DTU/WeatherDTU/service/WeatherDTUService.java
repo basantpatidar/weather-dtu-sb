@@ -27,10 +27,6 @@ public class WeatherDTUService {
 	public List<WeatherReading> getBadWeather() {
 		List<WeatherReading> list = new ArrayList<>(); 
 		
-		if(weatherReading.getTemperature() > 80) {
-			 
-		 }
-		
 		return list;
 	}
 }
