@@ -19,7 +19,6 @@ public class WeatherDTUService {
 //		 weatherDTURepository.findAll().forEach(list1->list.add(list1));
 		 list = (List<WeatherReading>) weatherDTURepository.findAll();
 		 
-		
      return list;
 		
 	}
@@ -29,9 +28,8 @@ public class WeatherDTUService {
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
 		for(WeatherReading reading : list) {
-			if(reading.getTemperature()>=80.00) {
+			if(reading.getTemperature()>=80.00) 
 				badWeatherlist.add(reading);
-			}
 		}
 		return badWeatherlist;
 		
