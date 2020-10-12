@@ -31,11 +31,12 @@ public class WeatherController {
 			return weatherReading;
 		}
 		
-		@GetMapping("/GetCityReading")
+		@GetMapping("/getCityReading")
 		public List<WeatherReading> getCityReading(@RequestParam("city") String city){
 			List<WeatherReading> list = new ArrayList<WeatherReading>();
 			list = weatherDTUService.getCityReading(city);
-			return null;
+			System.out.println(list.toString());
+			return list;
 		}
 		
 		@GetMapping("/test")
