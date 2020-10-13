@@ -34,4 +34,19 @@ public class WeatherDTUService {
 		return badWeatherlist;
 		
 	}
+
+	public List<WeatherReading> getCityReading(String city) {
+		List<WeatherReading> list = new ArrayList<>();
+		list = (List<WeatherReading>) weatherDTURepository.findAll();
+		List<WeatherReading> cityList = new ArrayList<>();
+		for(WeatherReading reading: list) {
+//			System.out.println(reading.getCity());
+//			System.out.println(city);
+			if(reading.getCity() == city) {
+				System.out.println("++++");
+				cityList.add(reading);
+			}
+		}
+		return cityList;
+	}
 }
