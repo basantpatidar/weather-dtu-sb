@@ -41,9 +41,7 @@ public class WeatherDTUService {
 		List<WeatherReading> cityList = new ArrayList<>();
 		for(WeatherReading reading: list) {
 //			System.out.println(reading.getCity());
-//			System.out.println(city);
 			if(reading.getCity() == city) {
-				System.out.println("++++");
 				cityList.add(reading);
 			}
 		}
