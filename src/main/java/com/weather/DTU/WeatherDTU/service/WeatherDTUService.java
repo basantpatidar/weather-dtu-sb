@@ -40,8 +40,8 @@ public class WeatherDTUService {
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> cityList = new ArrayList<>();
 		for(WeatherReading reading: list) {
-//			System.out.println(reading.getCity());
-			if(reading.getCity() == city) {
+			System.out.println(reading.getCity());
+			if(reading.getCity().equals(city)) {
 				cityList.add(reading);
 			}
 		}
