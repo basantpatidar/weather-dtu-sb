@@ -31,6 +31,7 @@ public class WeatherDTUService {
 			if(reading.getTemperature()>=80.00) 
 				badWeatherlist.add(reading);
 		}
+		//Rest Here
 		return badWeatherlist;
 		
 	}
