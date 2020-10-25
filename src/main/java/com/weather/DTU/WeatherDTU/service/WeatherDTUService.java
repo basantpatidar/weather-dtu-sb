@@ -52,4 +52,8 @@ public class WeatherDTUService {
 		}
 		return cityList;
 	}
+	
+	public Double updateTemperature() {
+		return null;
+	}
 }
