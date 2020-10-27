@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +38,12 @@ public class WeatherController {
 			list = weatherDTUService.getCityReading(city);
 			System.out.println(list.toString());
 			return list;
+		}
+		
+		@PutMapping("/updateTemp")
+		public boolean updateTemp(String city, double temperature) {
+			weatherDTUService.updateTemperature(city, temperature);
+			return true;
 		}
 		
 		@GetMapping("/test")
