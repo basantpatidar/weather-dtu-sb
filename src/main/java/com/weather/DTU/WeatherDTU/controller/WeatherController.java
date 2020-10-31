@@ -41,8 +41,8 @@ public class WeatherController {
 		}
 		
 		@PutMapping("/updateTemp")
-		public boolean updateTemp(String city, double temperature) {
-			weatherDTUService.updateTemperature(city, temperature);
+		public boolean updateTemp(double temperature, String timestamp) {
+			weatherDTUService.updateTemperature(temperature, timestamp);
 			return true;
 		}
 		
