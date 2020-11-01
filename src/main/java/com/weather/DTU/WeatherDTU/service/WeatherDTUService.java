@@ -53,8 +53,8 @@ public class WeatherDTUService {
 		return cityList;
 	}
 	
-	public Double updateTemperature(double Temperature, String timestamp) {
+	public boolean updateTemperature(double Temperature, String timestamp) {
 		
-		return null;
+		return true;
 	}
 }
