@@ -55,6 +55,7 @@ public class WeatherDTUService {
 		List list = new ArrayList<>();
 		list.add(Temperature);
 		list.add(timestamp);
+		System.out.println(list);
 		restTemplate.postForObject("http://localhost:9090/badWeatherlist", list, boolean.class);
 		
 		return true;
