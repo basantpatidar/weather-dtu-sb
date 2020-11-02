@@ -36,9 +36,7 @@ public class WeatherDTUService {
 				badWeatherlist.add(reading);
 		}
 		restTemplate.postForObject("http://localhost:9090/badWeatherlist", badWeatherlist, boolean.class);
-		
 		return badWeatherlist;
-		
 	}
 
 	public List<WeatherReading> getCityReading(String city) {
@@ -54,6 +52,10 @@ public class WeatherDTUService {
 	}
 	
 	public boolean updateTemperature(double Temperature, String timestamp) {
+		List list = new ArrayList<>();
+		list.add(Temperature);
+		list.add(timestamp);
+		restTemplate.postForObject("http://localhost:9090/badWeatherlist", list, boolean.class);
 		
 		return true;
 	}
