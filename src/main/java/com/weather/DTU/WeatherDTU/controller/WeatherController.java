@@ -40,7 +40,7 @@ public class WeatherController {
 			return list;
 		}
 		
-		@PutMapping("/updateTemp")
+		@GetMapping("/updateTemp")
 		public boolean updateTemp(double temperature, String timestamp) {
 			weatherDTUService.updateTemperature(temperature, timestamp);
 			return true;
