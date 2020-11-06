@@ -32,11 +32,11 @@ public class WeatherDTUService {
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
 		for(WeatherReading reading : list) {
-			if(reading.getTemperature()>=80.00) 
+			if(reading.getTemperature()<=20.00) 
 				badWeatherlist.add(reading);
 		}
-		restTemplate.postForObject("http://localhost:9090/badWeatherlist", badWeatherlist, boolean.class);
-		return badWeatherlist;
+		restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist, boolean.class);
+		return badWeatherlist; 
 	}
 
 	public List<WeatherReading> getCityReading(String city) {
@@ -51,12 +51,12 @@ public class WeatherDTUService {
 		return cityList;
 	}
 	
-	public boolean updateTemperature(double Temperature, String timestamp) {
-		List list = new ArrayList<>();
-		list.add(Temperature);
+	public boolean updateTemperature(double temperature, String timestamp) {
+		List<Object> list = new ArrayList<>();
+		list.add(temperature);
 		list.add(timestamp);
 		System.out.println(list);
-		restTemplate.postForObject("http://localhost:9090/badWeatherlist", list, boolean.class);
+		restTemplate.postForObject("http://localhost:9090/badWeatherlist", null, boolean.class);
 		
 		return true;
 	}
