@@ -56,7 +56,7 @@ public class WeatherDTUService {
 		list.add(temperature);
 		list.add(timestamp);
 		System.out.println(list);
-		restTemplate.postForObject("http://localhost:9090/badWeatherlist", null, boolean.class);
+//		restTemplate.postForObject("http://localhost:9090/badWeatherlist", null, boolean.class);
 		
 		return true;
 	}
