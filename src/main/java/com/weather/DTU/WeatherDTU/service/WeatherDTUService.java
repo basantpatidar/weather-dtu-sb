@@ -35,9 +35,53 @@ public class WeatherDTUService {
 			if(reading.getTemperature()<=20.00) 
 				badWeatherlist.add(reading);
 		}
-		return restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist, boolean.class);
+		return restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist.toString(), boolean.class);
 //		return badWeatherlist; 
 	}
+	
+//	
+//	@PostMapping(
+//			  value = "/createPerson", consumes = "application/json", produces = "application/json")
+//			public Person createPerson(@RequestBody Person person) {
+//			    return personService.saveUpdatePerson(person);
+//			}
+//			 
+//			@PostMapping(
+//			  value = "/updatePerson", consumes = "application/json", produces = "application/json")
+//			public Person updatePerson(@RequestBody Person person, HttpServletResponse response) {
+//			    response.setHeader("Location", ServletUriComponentsBuilder.fromCurrentContextPath()
+//			      .path("/findPerson/" + person.getId()).toUriString());
+//			    
+//			    return personService.saveUpdatePerson(person);
+//			}
+//	
+//	
+//	@BeforeClass
+//	public static void runBeforeAllTestMethods() {
+//	    createPersonUrl = "http://localhost:8082/spring-rest/createPerson";
+//	    updatePersonUrl = "http://localhost:8082/spring-rest/updatePerson";
+//	 
+//	    restTemplate = new RestTemplate();
+//	    headers = new HttpHeaders();
+//	    headers.setContentType(MediaType.APPLICATION_JSON);
+//	    personJsonObject = new JSONObject();
+//	    personJsonObject.put("id", 1);
+//	    personJsonObject.put("name", "John");
+//	}
+//	
+//	public void givenDataIsJson_whenDataIsPostedByPostForObject_thenResponseBodyIsNotNull()
+//			  throws IOException {
+//			    HttpEntity<String> request = 
+//			      new HttpEntity<String>(personJsonObject.toString(), headers);
+//			    
+//			    String personResultAsJsonStr = 
+//			      restTemplate.postForObject(createPersonUrl, request, String.class);
+//			    JsonNode root = objectMapper.readTree(personResultAsJsonStr);
+//			    
+//			    assertNotNull(personResultAsJsonStr);
+//			    assertNotNull(root);
+//			    assertNotNull(root.path("name").asText());
+//			}
 
 	public List<WeatherReading> getCityReading(String city) {
 		List<WeatherReading> list = new ArrayList<>();
