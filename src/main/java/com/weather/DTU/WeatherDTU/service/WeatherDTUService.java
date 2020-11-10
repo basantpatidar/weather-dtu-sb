@@ -27,7 +27,7 @@ public class WeatherDTUService {
 		
 	}
 
-	public Boolean getBadWeather() {
+	public List<WeatherReading> getBadWeather() {
 		List<WeatherReading> list = new ArrayList<>(); 
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
@@ -35,8 +35,8 @@ public class WeatherDTUService {
 			if(reading.getTemperature()<=20.00) 
 				badWeatherlist.add(reading);
 		}
-		return restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist.toString(), boolean.class);
-//		return badWeatherlist; 
+		String rest = restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist.toString(), String.class);
+		return badWeatherlist; 
 	}
 	
 //	
