@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
 import com.weather.DTU.WeatherDTU.service.WeatherDTUService;
  
@@ -25,11 +26,19 @@ public class WeatherController {
 			return  weatherReading;
 		}
 		
+//		@GetMapping("/getBadWeather")
+//		public List<WeatherReading> getBadWeather(){
+//			List<WeatherReading> weatherReading = new ArrayList<WeatherReading>();
+//			weatherReading = weatherDTUService.getBadWeather();
+//			return weatherReading;
+//		}
+		
 		@GetMapping("/getBadWeather")
-		public List<WeatherReading> getBadWeather(){
+		public boolean getBadWeather() throws JsonProcessingException{
 			List<WeatherReading> weatherReading = new ArrayList<WeatherReading>();
-			weatherReading = weatherDTUService.getBadWeather();
-			return weatherReading;
+//			weatherReading = weatherDTUService.getBadWeather();
+			List<WeatherReading> returnValue = weatherDTUService.getBadWeather();
+			return true;
 		}
 		
 		@GetMapping("/getCityReading")
