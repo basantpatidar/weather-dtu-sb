@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
 import com.weather.DTU.WeatherDTU.repository.WeatherDTURepository;
 
@@ -17,6 +19,7 @@ public class WeatherDTUService {
 	WeatherDTURepository weatherDTURepository;
 	
 	private RestTemplate restTemplate;
+	private ObjectMapper objectMapper;
 
 	public List<WeatherReading> getAllReadings(){
 		 List<WeatherReading> list = new ArrayList<>(); 
@@ -27,7 +30,7 @@ public class WeatherDTUService {
 		
 	}
 
-	public List<WeatherReading> getBadWeather() {
+	public List<WeatherReading> getBadWeather() throws JsonProcessingException {
 		List<WeatherReading> list = new ArrayList<>(); 
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
@@ -35,7 +38,8 @@ public class WeatherDTUService {
 			if(reading.getTemperature()<=20.00) 
 				badWeatherlist.add(reading);
 		}
-		String rest = restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist.toString(), String.class);
+		String temp = objectMapper.writeValueAsString(badWeatherlist);
+		String rest = restTemplate.postForObject("http://localhost:9090/badWeather", temp, String.class);
 		return badWeatherlist; 
 	}
 	
