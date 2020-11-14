@@ -1,15 +1,17 @@
 package com.weather.DTU.WeatherDTU.service;
 
+import java.net.http.HttpHeaders;
 import java.util.ArrayList;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.weather.DTU.WeatherDTU.model.WeatherReading;
 import com.weather.DTU.WeatherDTU.repository.WeatherDTURepository;
 
@@ -19,7 +21,6 @@ public class WeatherDTUService {
 	WeatherDTURepository weatherDTURepository;
 	
 	private RestTemplate restTemplate;
-	private ObjectMapper objectMapper;
 
 	public List<WeatherReading> getAllReadings(){
 		 List<WeatherReading> list = new ArrayList<>(); 
@@ -30,7 +31,7 @@ public class WeatherDTUService {
 		
 	}
 
-	public List<WeatherReading> getBadWeather() throws JsonProcessingException {
+	public List<WeatherReading> getBadWeather() {
 		List<WeatherReading> list = new ArrayList<>(); 
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
@@ -38,8 +39,19 @@ public class WeatherDTUService {
 			if(reading.getTemperature()<=20.00) 
 				badWeatherlist.add(reading);
 		}
-		String temp = objectMapper.writeValueAsString(badWeatherlist);
-		String rest = restTemplate.postForObject("http://localhost:9090/badWeather", temp, String.class);
+		try {
+			String url = "http://localhost:9090/badWeather";
+			//org.springframework.http.HttpHeaders httpHeaders = new org.springframework.http.HttpHeaders();
+			//httpHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+			//String res = restTemplate.postForObject(url, badWeatherlist.toString(), String.class);
+			restTemplate = new RestTemplate();
+			//ResponseEntity<WeatherReading[]> responseEntity = restTemplate.getForEntity(url, WeatherReading[].class);
+			
+			ResponseEntity rest = restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist, ResponseEntity.class);
+			
+		} catch (Exception e) {
+			System.out.println("Exception ------>"+e);
+		}
 		return badWeatherlist; 
 	}
 	
