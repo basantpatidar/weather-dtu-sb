@@ -45,7 +45,7 @@ public class WeatherDTUService {
 			//httpHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 			//String res = restTemplate.postForObject(url, badWeatherlist.toString(), String.class);
 			restTemplate = new RestTemplate();
-			//ResponseEntity<WeatherReading[]> responseEntity = restTemplate.getForEntity(url, WeatherReading[].class);
+			ResponseEntity<WeatherReading[]> responseEntity = restTemplate.getForEntity(url, WeatherReading[].class);
 			
 			ResponseEntity rest = restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist, ResponseEntity.class);
 			
