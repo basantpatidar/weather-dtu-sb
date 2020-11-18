@@ -18,20 +18,24 @@ import com.weather.DTU.WeatherDTU.repository.WeatherDTURepository;
 @Service
 public class WeatherDTUService {
 	@Autowired
-	WeatherDTURepository weatherDTURepository;
+	private WeatherDTURepository weatherDTURepository;
 	
 	private RestTemplate restTemplate;
+
+//	public WeatherDTUService(WeatherDTURepository weatherDTURepository, RestTemplate restTemplate) {
+//		super();
+//		this.weatherDTURepository = weatherDTURepository;
+//		this.restTemplate = restTemplate;
+//	}
 
 	public List<WeatherReading> getAllReadings(){
 		 List<WeatherReading> list = new ArrayList<>(); 
 //		 weatherDTURepository.findAll().forEach(list1->list.add(list1));
 		 list = (List<WeatherReading>) weatherDTURepository.findAll();
-		 
      return list;
-		
 	}
 
-	public List<WeatherReading> getBadWeather() {
+	public boolean getBadWeather() {
 		List<WeatherReading> list = new ArrayList<>(); 
 		list = (List<WeatherReading>) weatherDTURepository.findAll();
 		List<WeatherReading> badWeatherlist = new ArrayList<>(); 
@@ -40,19 +44,14 @@ public class WeatherDTUService {
 				badWeatherlist.add(reading);
 		}
 		try {
-			String url = "http://localhost:9090/badWeather";
-			//org.springframework.http.HttpHeaders httpHeaders = new org.springframework.http.HttpHeaders();
-			//httpHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-			//String res = restTemplate.postForObject(url, badWeatherlist.toString(), String.class);
-			restTemplate = new RestTemplate();
-		//	ResponseEntity<WeatherReading[]> responseEntity = restTemplate.getForEntity(url, WeatherReading[].class);
-			
-			ResponseEntity rest = restTemplate.postForObject("http://localhost:9090/badWeather", badWeatherlist, ResponseEntity.class);
+			String url = "http://localhost:9090//badWeather";
+			RestTemplate restTemplate = new RestTemplate();
+			return restTemplate.postForObject("http://localhost:9090//badWeather", badWeatherlist, boolean.class);
 			
 		} catch (Exception e) {
 			System.out.println("Exception ------>"+e);
 		}
-		return badWeatherlist; 
+		return false; 
 	}
 	
 	public List<WeatherReading> getCityReading(String city) {
