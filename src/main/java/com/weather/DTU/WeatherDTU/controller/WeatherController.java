@@ -37,8 +37,8 @@ public class WeatherController {
 		public boolean getBadWeather() throws JsonProcessingException{
 			List<WeatherReading> weatherReading = new ArrayList<WeatherReading>();
 //			weatherReading = weatherDTUService.getBadWeather();
-			List<WeatherReading> returnValue = weatherDTUService.getBadWeather();
-			return true;
+			return weatherDTUService.getBadWeather();
+//			return true;
 		}
 		
 		@GetMapping("/getCityReading")
